@@ -1,0 +1,19 @@
+{
+  "lmstudio_url": "http://localhost:1234/v1/chat/completions",
+  "temperature": 0.0,
+  "max_output_tokens": 64,
+
+  "single_word_rounds": 50000,
+  "multi_word_rounds": 50000,
+
+  "multiword_mix": {
+    "two_word_probability": 0.5,
+    "three_word_probability": 0.5
+  },
+
+  "dictionary_path": "jsons/english_token_dictionary_clean.json",
+  "database_path": "results.db",
+
+  "retry_attempts": 3,
+  "retry_delay_seconds": 1.5
+}
