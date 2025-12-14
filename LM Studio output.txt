@@ -1,0 +1,2199 @@
+2025-12-14 17:44:30 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"ena\", \"at\", \"s\", \"Ġuniform\", \"Ġfeline\"... <Truncated in logs> ...tw\", \"ons\", \"Ġsociety\", \"Ġdiscretion\", \"Ġpickle\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:30  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:31 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:31 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:31  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:31 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 312
+Cache reuse summary: 252/312 of prompt (80.7692%), 252 prefix, 0 non-prefix
+Total prompt tokens: 312
+Prompt tokens to decode: 60
+BeginProcessingPrompt
+2025-12-14 17:44:31 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:31  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:32 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     148.29 ms
+common_perf_print:    samplers time =       1.40 ms /   327 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     164.95 ms /    60 tokens (    2.75 ms per token,   363.74 tokens per second)
+common_perf_print:        eval time =     384.33 ms /    14 runs   (   27.45 ms per token,    36.43 tokens per second)
+common_perf_print:       total time =     699.27 ms /    74 tokens
+common_perf_print: unaccounted time =       1.71 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         13
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1613 + (8393 =  7340 +      68 +     985) +        2219 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-lbnp584ngrtajp3mcnumo",
+  "object": "chat.completion",
+  "created": 1765727070,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 15,
+    "total_tokens": 327
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:32 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġopp\", \"Ġjson\", \"ation\", \"Ġin\", \"Ġreasoning\", \"Ġretract\", \"Ġeither\", \"Ġsh\", \"Ġree\", \"Ġjot\", \"ky\", \"Ġaid\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:32 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:32 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:32 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 314
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:32 [DEBUG]
+ Cache reuse summary: 252/314 of prompt (80.2548%), 252 prefix, 0 non-prefix
+Total prompt tokens: 314
+Prompt tokens to decode: 62
+BeginProcessingPrompt
+2025-12-14 17:44:32 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:32 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     204.65 ms
+common_perf_print:    samplers time =       1.38 ms /   327 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     165.46 ms /    62 tokens (    2.67 ms per token,   374.72 tokens per second)
+common_perf_print:        eval time =     330.58 ms /    12 runs   (   27.55 ms per token,    36.30 tokens per second)
+common_perf_print:       total time =     703.06 ms /    74 tokens
+common_perf_print: unaccounted time =       2.37 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         11
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-1pdbrkl6m0kjh7gfx3nlad",
+  "object": "chat.completion",
+  "created": 1765727072,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [\n-1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 13,
+    "total_tokens": 327
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:32 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġalphabetical\", \"Ġda\", \"Ġflash\", \"Ġspl... <Truncated in logs> ...won\", \"Ġsh\", \"Ġcalculations\", \"Ġswimmer\", \"asta\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:32 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:32 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:32 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 311
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:32 [DEBUG]
+ Cache reuse summary: 254/311 of prompt (81.672%), 254 prefix, 0 non-prefix
+Total prompt tokens: 311
+Prompt tokens to decode: 57
+BeginProcessingPrompt
+2025-12-14 17:44:32 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:32  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:34 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     466.08 ms
+common_perf_print:    samplers time =       3.29 ms /   344 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     164.51 ms /    57 tokens (    2.89 ms per token,   346.48 tokens per second)
+common_perf_print:        eval time =     888.11 ms /    32 runs   (   27.75 ms per token,    36.03 tokens per second)
+common_perf_print:       total time =    1520.85 ms /    89 tokens
+common_perf_print: unaccounted time =       2.16 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         31
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1582 + (8393 =  7340 +      68 +     985) +        2250 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-h08c1d7ie98u8p5vgdmzlk",
+  "object": "chat.completion",
+  "created": 1765727072,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    0,\n    1,\n    0,\n    0,\n-1\n]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311,
+    "completion_tokens": 33,
+    "total_tokens": 344
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:34 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġminiature\", \"Ġmanifestations\", \"Ġtry\"... <Truncated in logs> ..., \"Ġcreated\", \"Ġapex\", \"Ġdes\", \"Ġh\", \"pot\", \"ul\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:34 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+2025-12-14 17:44:34 [DEBUG]
+ Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 324
+Cache reuse summary: 254/324 of prompt (78.3951%), 254 prefix, 0 non-prefix
+Total prompt tokens: 324
+Prompt tokens to decode: 70
+BeginProcessingPrompt
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:34 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:34 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     172.73 ms
+common_perf_print:    samplers time =       1.18 ms /   336 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     173.59 ms /    70 tokens (    2.48 ms per token,   403.25 tokens per second)
+common_perf_print:        eval time =     303.03 ms /    11 runs   (   27.55 ms per token,    36.30 tokens per second)
+common_perf_print:       total time =     651.73 ms /    81 tokens
+common_perf_print: unaccounted time =       2.39 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         10
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-gtvq03hy6qj0bxxrpbsrd",
+  "object": "chat.completion",
+  "created": 1765727074,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 324,
+    "completion_tokens": 12,
+    "total_tokens": 336
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:34 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġplay\", \"Ġmagnets\", \"ge\", \"Ġrabb\", \"Ġf... <Truncated in logs> ...ted\", \"Ġpresented\", \"Ġcardboard\", \"Ġmad\", \"Ġvee\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:34 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 318
+2025-12-14 17:44:34  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:34 [DEBUG]
+ Cache reuse summary: 254/318 of prompt (79.8742%), 254 prefix, 0 non-prefix
+Total prompt tokens: 318
+Prompt tokens to decode: 64
+BeginProcessingPrompt
+2025-12-14 17:44:35 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:35 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     158.75 ms
+common_perf_print:    samplers time =       1.46 ms /   333 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     159.62 ms /    64 tokens (    2.49 ms per token,   400.96 tokens per second)
+common_perf_print:        eval time =     377.66 ms /    14 runs   (   26.98 ms per token,    37.07 tokens per second)
+common_perf_print:       total time =     698.32 ms /    78 tokens
+common_perf_print: unaccounted time =       2.29 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         13
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-8hpx8ms6p8t0qlf0tuuwkn",
+  "object": "chat.completion",
+  "created": 1765727074,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 318,
+    "completion_tokens": 15,
+    "total_tokens": 333
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:35 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġlingua\", \"field\", \"Ġaperture\", \"y\", \"... <Truncated in logs> ...\"Ġjordan\", \"beat\", \"Ġsprites\", \"Ġpina\", \"Ġmemes\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:35 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:35 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:35 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 314
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:35 [DEBUG]
+ Cache reuse summary: 254/314 of prompt (80.8917%), 254 prefix, 0 non-prefix
+Total prompt tokens: 314
+Prompt tokens to decode: 60
+BeginProcessingPrompt
+2025-12-14 17:44:35 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:35  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:36 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     184.23 ms
+common_perf_print:    samplers time =       1.28 ms /   327 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     163.31 ms /    60 tokens (    2.72 ms per token,   367.39 tokens per second)
+common_perf_print:        eval time =     322.42 ms /    12 runs   (   26.87 ms per token,    37.22 tokens per second)
+common_perf_print:       total time =     672.19 ms /    72 tokens
+common_perf_print: unaccounted time =       2.23 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         11
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:36  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:36  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-p1xp3dzqd812rglk11cqzm",
+  "object": "chat.completion",
+  "created": 1765727075,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [\n-1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 13,
+    "total_tokens": 327
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:36 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġo\", \"Ġjam\", \"Ġf\", \"Ġsubscriber\", \"ato... <Truncated in logs> ...Ġappearance\", \"Ġun\", \"on\", \"enez\", \"Ġjim\", \"ies\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:36  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:36 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:36 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:36 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 320
+2025-12-14 17:44:36 [DEBUG]
+ Cache reuse summary: 254/320 of prompt (79.375%), 254 prefix, 0 non-prefix
+Total prompt tokens: 320
+Prompt tokens to decode: 66
+BeginProcessingPrompt
+2025-12-14 17:44:36  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:36 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:36  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:37 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     165.54 ms
+common_perf_print:    samplers time =       1.34 ms /   335 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     182.01 ms /    66 tokens (    2.76 ms per token,   362.61 tokens per second)
+common_perf_print:        eval time =     387.28 ms /    14 runs   (   27.66 ms per token,    36.15 tokens per second)
+common_perf_print:       total time =     737.27 ms /    80 tokens
+common_perf_print: unaccounted time =       2.44 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         13
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-pzr689t62j0agln0l9g8zk",
+  "object": "chat.completion",
+  "created": 1765727076,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 15,
+    "total_tokens": 335
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:37 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġluna\", \"Ġbbw\", \"Ġir\", \"Ġethnicity\", \"Ġw\", \"Ġla\", \"Ġrendition\", \"arma\", \"Ġpony\", \"Ġtreasure\", \"Ġforbidden\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:37 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:37 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:37 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 313
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:37 [DEBUG]
+ Cache reuse summary: 254/313 of prompt (81.1502%), 254 prefix, 0 non-prefix
+Total prompt tokens: 313
+Prompt tokens to decode: 59
+BeginProcessingPrompt
+2025-12-14 17:44:37 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:37 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     228.26 ms
+common_perf_print:    samplers time =       1.47 ms /   326 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     161.77 ms /    59 tokens (    2.74 ms per token,   364.72 tokens per second)
+common_perf_print:        eval time =     330.58 ms /    12 runs   (   27.55 ms per token,    36.30 tokens per second)
+common_perf_print:       total time =     722.59 ms /    71 tokens
+common_perf_print: unaccounted time =       1.99 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         11
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-pemuyj5b95segpoi5k2h79",
+  "object": "chat.completion",
+  "created": 1765727077,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [\n-1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 13,
+    "total_tokens": 326
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:37 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġlacking\", \"Ġanxious\", \"ific\", \"Ġob\", \"arium\", \"Ġfre\", \"Ġber\", \"Ġest\", \"Ġpry\", \"Ġpac\", \"o\", \"ystems\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:37 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:37 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:37  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:37 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 311
+Cache reuse summary: 255/311 of prompt (81.9936%), 255 prefix, 0 non-prefix
+Total prompt tokens: 311
+Prompt tokens to decode: 56
+BeginProcessingPrompt
+2025-12-14 17:44:38 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:38  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:39 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     409.94 ms
+common_perf_print:    samplers time =       3.04 ms /   344 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     165.56 ms /    56 tokens (    2.96 ms per token,   338.24 tokens per second)
+common_perf_print:        eval time =     893.05 ms /    32 runs   (   27.91 ms per token,    35.83 tokens per second)
+common_perf_print:       total time =    1470.95 ms /    88 tokens
+common_perf_print: unaccounted time =       2.40 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         31
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1598 + (8393 =  7340 +      68 +     985) +        2234 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:39  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:39  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-wb5mnu89o2btmix0oacdr",
+  "object": "chat.completion",
+  "created": 1765727077,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    0,\n    0,\n    1,\n    1,\n-1\n]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311,
+    "completion_tokens": 33,
+    "total_tokens": 344
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:39 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġid\", \"Ġgained\", \"Ġstrike\", \"Ġt\", \"Ġut\", \"awar\", \"Ġsunny\", \"Ġpun\", \"ica\", \"Ġw\", \"Ġtrays\", \"Ġmalpractice\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:39  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:39 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:39 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:39 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 315
+2025-12-14 17:44:39  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:39 [DEBUG]
+ Cache reuse summary: 254/315 of prompt (80.6349%), 254 prefix, 0 non-prefix
+Total prompt tokens: 315
+Prompt tokens to decode: 61
+BeginProcessingPrompt
+2025-12-14 17:44:39 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:39  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:40 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     251.30 ms
+common_perf_print:    samplers time =       1.94 ms /   333 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     162.70 ms /    61 tokens (    2.67 ms per token,   374.93 tokens per second)
+common_perf_print:        eval time =     477.35 ms /    17 runs   (   28.08 ms per token,    35.61 tokens per second)
+common_perf_print:       total time =     893.68 ms /    78 tokens
+common_perf_print: unaccounted time =       2.34 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         16
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:40  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:40  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-rp8izbd2fzlmhlcgnfs19",
+  "object": "chat.completion",
+  "created": 1765727079,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    1\n] }]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 315,
+    "completion_tokens": 18,
+    "total_tokens": 333
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:40 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġhills\", \"ette\", \"Ġreviewed\", \"Ġbol\", ... <Truncated in logs> ...storyline\", \"Ġfra\", \"Ġculture\", \"Ġor\", \"borough\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:40  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:40 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:40 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:40 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 315
+2025-12-14 17:44:40 [DEBUG]
+ Cache reuse summary: 254/315 of prompt (80.6349%), 254 prefix, 0 non-prefix
+Total prompt tokens: 315
+Prompt tokens to decode: 61
+BeginProcessingPrompt
+2025-12-14 17:44:40  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:40 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:40  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:41 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     282.36 ms
+common_perf_print:    samplers time =       2.00 ms /   333 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     171.42 ms /    61 tokens (    2.81 ms per token,   355.86 tokens per second)
+common_perf_print:        eval time =     475.59 ms /    17 runs   (   27.98 ms per token,    35.74 tokens per second)
+common_perf_print:       total time =     931.12 ms /    78 tokens
+common_perf_print: unaccounted time =       1.75 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         16
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:41  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:41  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-uj6ztri0rjkw07xk6paz1",
+  "object": "chat.completion",
+  "created": 1765727080,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    1\n]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 315,
+    "completion_tokens": 18,
+    "total_tokens": 333
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:41 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"ling\", \"Ġaeg\", \"Ġwrongly\", \"Ġimprison\"... <Truncated in logs> ...nts\", \"rc\", \"Ġh\", \"Ġsc\", \"ik\", \"yk\", \"ad\", \"Ġre\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:41  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:41 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:41 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:41 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 325
+2025-12-14 17:44:41  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:41 [DEBUG]
+ Cache reuse summary: 252/325 of prompt (77.5385%), 252 prefix, 0 non-prefix
+Total prompt tokens: 325
+Prompt tokens to decode: 73
+BeginProcessingPrompt
+2025-12-14 17:44:41 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:41  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:42 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     292.90 ms
+common_perf_print:    samplers time =       2.56 ms /   352 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     181.67 ms /    73 tokens (    2.49 ms per token,   401.83 tokens per second)
+common_perf_print:        eval time =     734.74 ms /    26 runs   (   28.26 ms per token,    35.39 tokens per second)
+common_perf_print:       total time =    1211.84 ms /    99 tokens
+common_perf_print: unaccounted time =       2.54 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         25
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:42  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:42  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-hi03jqn1fdiz3oygffyr5a",
+  "object": "chat.completion",
+  "created": 1765727081,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [1, 2, 5, 3, 3, 5]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 325,
+    "completion_tokens": 27,
+    "total_tokens": 352
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:42 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"au\", \"Ġdearly\", \"Ġcore\", \"Ġhearing\", \"... <Truncated in logs> ..., \"ement\", \"Ġp\", \"Ġblat\", \"Ġland\", \"Ġpay\", \"els\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:42  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:42 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:42 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:42 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 316
+2025-12-14 17:44:42  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:42 [DEBUG]
+ Cache reuse summary: 252/316 of prompt (79.7468%), 252 prefix, 0 non-prefix
+Total prompt tokens: 316
+Prompt tokens to decode: 64
+BeginProcessingPrompt
+2025-12-14 17:44:42 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:42  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:43 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     193.12 ms
+common_perf_print:    samplers time =       1.56 ms /   330 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     177.52 ms /    64 tokens (    2.77 ms per token,   360.52 tokens per second)
+common_perf_print:        eval time =     358.22 ms /    13 runs   (   27.56 ms per token,    36.29 tokens per second)
+common_perf_print:       total time =     731.06 ms /    77 tokens
+common_perf_print: unaccounted time =       2.20 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         12
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1557 + (8393 =  7340 +      68 +     985) +        2275 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:43  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:43  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-gcz7ij3rxwhlltcj21wrl",
+  "object": "chat.completion",
+  "created": 1765727082,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 14,
+    "total_tokens": 330
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:43 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġun\", \"inning\", \"ulus\", \"umen\", \"Ġjohn... <Truncated in logs> ..., \"Ġrom\", \"Ġveget\", \"imbo\", \"ell\", \"ens\", \"wood\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:43  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:43 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:43 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:43 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 310
+2025-12-14 17:44:43  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:43 [DEBUG]
+ Cache reuse summary: 252/310 of prompt (81.2903%), 252 prefix, 0 non-prefix
+Total prompt tokens: 310
+Prompt tokens to decode: 58
+BeginProcessingPrompt
+2025-12-14 17:44:43 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:43  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:44 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     264.53 ms
+common_perf_print:    samplers time =       1.95 ms /   328 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     166.86 ms /    58 tokens (    2.88 ms per token,   347.61 tokens per second)
+common_perf_print:        eval time =     489.32 ms /    17 runs   (   28.78 ms per token,    34.74 tokens per second)
+common_perf_print:       total time =     923.18 ms /    75 tokens
+common_perf_print: unaccounted time =       2.47 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         16
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-94c6eczc8mlvvsln3kj",
+  "object": "chat.completion",
+  "created": 1765727083,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    1\n]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 310,
+    "completion_tokens": 18,
+    "total_tokens": 328
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:44 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"ines\", \"Ġsm\", \"ls\", \"Ġtrans\", \"iant\", ... <Truncated in logs> ...ons\", \"gress\", \"wal\", \"Ġrecommendation\", \"Ġdevi\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:44 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:44 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:44 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 318
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:44 [DEBUG]
+ Cache reuse summary: 252/318 of prompt (79.2453%), 252 prefix, 0 non-prefix
+Total prompt tokens: 318
+Prompt tokens to decode: 66
+BeginProcessingPrompt
+2025-12-14 17:44:44 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:44 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     145.16 ms
+common_perf_print:    samplers time =       1.35 ms /   333 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     172.58 ms /    66 tokens (    2.61 ms per token,   382.44 tokens per second)
+common_perf_print:        eval time =     388.16 ms /    14 runs   (   27.73 ms per token,    36.07 tokens per second)
+common_perf_print:       total time =     707.84 ms /    80 tokens
+common_perf_print: unaccounted time =       1.94 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         13
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-l9i2m5vxbupwigcgx6jybs",
+  "object": "chat.completion",
+  "created": 1765727084,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 318,
+    "completion_tokens": 15,
+    "total_tokens": 333
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:44 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġexpiration\", \"opped\", \"Ġmont\", \"Ġbe\",... <Truncated in logs> ...n\", \"ole\", \"Ġger\", \"ert\", \"ber\", \"Ġmiscar\", \"ps\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:44 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:44 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:44 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 312
+2025-12-14 17:44:44  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:44 [DEBUG]
+ Cache reuse summary: 252/312 of prompt (80.7692%), 252 prefix, 0 non-prefix
+Total prompt tokens: 312
+Prompt tokens to decode: 60
+BeginProcessingPrompt
+2025-12-14 17:44:45 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:45  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:45 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     269.56 ms
+common_perf_print:    samplers time =       1.85 ms /   330 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     165.24 ms /    60 tokens (    2.75 ms per token,   363.11 tokens per second)
+common_perf_print:        eval time =     471.56 ms /    17 runs   (   27.74 ms per token,    36.05 tokens per second)
+common_perf_print:       total time =     908.12 ms /    77 tokens
+common_perf_print: unaccounted time =       1.77 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         16
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:45  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:45  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-9ocs8pe6k8du479gbh8z",
+  "object": "chat.completion",
+  "created": 1765727084,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    1\n] }]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 18,
+    "total_tokens": 330
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:45 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"om\", \"ammed\", \"Ġm\", \"Ġg\", \"Ġstor\", \"wick\", \"ero\", \"Ġseaw\", \"as\", \"Ġonly\", \"Ġinc\", \"Ġc\", \"Ġkik\", \"Ġpaste\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:45  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:45 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:45 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:45 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 317
+2025-12-14 17:44:45  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:45 [DEBUG]
+ Cache reuse summary: 252/317 of prompt (79.4953%), 252 prefix, 0 non-prefix
+Total prompt tokens: 317
+Prompt tokens to decode: 65
+BeginProcessingPrompt
+2025-12-14 17:44:46 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:46 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     166.86 ms
+common_perf_print:    samplers time =       1.47 ms /   332 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     165.58 ms /    65 tokens (    2.55 ms per token,   392.56 tokens per second)
+common_perf_print:        eval time =     398.37 ms /    14 runs   (   28.45 ms per token,    35.14 tokens per second)
+common_perf_print:       total time =     732.91 ms /    79 tokens
+common_perf_print: unaccounted time =       2.10 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         13
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1565 + (8393 =  7340 +      68 +     985) +        2267 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-m8mr1tot44fppz1omj5ug",
+  "object": "chat.completion",
+  "created": 1765727085,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 317,
+    "completion_tokens": 15,
+    "total_tokens": 332
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:46 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġpul\", \"Ġavoidance\", \"Ġsch\", \"Ġadhesio... <Truncated in logs> ...Ġaspire\", \"Ġcollapse\", \"Ġinconvenience\", \"lover\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:46 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:46 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:46 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 320
+Cache reuse summary:
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:46 [DEBUG]
+ 252/320 of prompt (78.75%), 252 prefix, 0 non-prefix
+Total prompt tokens: 320
+Prompt tokens to decode: 68
+BeginProcessingPrompt
+2025-12-14 17:44:46 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:46  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:47 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     218.21 ms
+common_perf_print:    samplers time =       1.58 ms /   333 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     202.04 ms /    68 tokens (    2.97 ms per token,   336.57 tokens per second)
+common_perf_print:        eval time =     347.27 ms /    12 runs   (   28.94 ms per token,    34.55 tokens per second)
+common_perf_print:       total time =     769.60 ms /    80 tokens
+common_perf_print: unaccounted time =       2.08 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         11
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1557 + (8393 =  7340 +      68 +     985) +        2275 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:47  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:47  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-34zqqur5h7nkrkyqu13sf",
+  "object": "chat.completion",
+  "created": 1765727086,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [\n-1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 13,
+    "total_tokens": 333
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:47 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"Ġuseless\", \"itt\", \"Ġwhom\", \"wich\", \"it... <Truncated in logs> ...eld\", \"lieb\", \"wise\", \"Ġl\", \"clock\", \"Ġdeterior\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:47  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:47 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:47 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:47 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 329
+2025-12-14 17:44:47 [DEBUG]
+ Cache reuse summary: 254/329 of prompt (77.2036%), 254 prefix, 0 non-prefix
+Total prompt tokens: 329
+Prompt tokens to decode: 75
+BeginProcessingPrompt
+2025-12-14 17:44:47  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:47 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:47  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:48 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     219.89 ms
+common_perf_print:    samplers time =       1.74 ms /   342 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     173.93 ms /    75 tokens (    2.32 ms per token,   431.21 tokens per second)
+common_perf_print:        eval time =     345.20 ms /    12 runs   (   28.77 ms per token,    34.76 tokens per second)
+common_perf_print:       total time =     740.82 ms /    87 tokens
+common_perf_print: unaccounted time =       1.80 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         11
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1569 + (8393 =  7340 +      68 +     985) +        2264 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:48  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:48  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-9sfriocrhfhz3keyxrrf",
+  "object": "chat.completion",
+  "created": 1765727087,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\"idx\": [\n-1]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 13,
+    "total_tokens": 342
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}
+2025-12-14 17:44:48 [DEBUG]
+ Received request: POST to /v1/chat/completions with body  {
+  "messages": [
+    {
+      "role": "system",
+      "content": "Output ONLY a valid JSON list of up to 20 construc... <Truncated in logs> ...[str, ...], \"concat\": str}\n5. If none, output [].\n"
+    },
+    {
+      "role": "user",
+      "content": "{\"tiles\": [\"in\", \"Ġsar\", \"ey\", \"el\", \"Ġmin\", \"Ġout... <Truncated in logs> ...Ġh\", \"er\", \"isc\", \"ule\", \"Ġol\", \"Ġcl\", \"Ġmassif\"]}"
+    }
+  ],
+  "model": "openai/gpt-oss-20b",
+  "max_tokens": 800,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "constructions_idx",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "idx"
+          ],
+          "properties": {
+            "idx": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "temperature": 0
+}
+2025-12-14 17:44:48  [INFO]
+ [openai/gpt-oss-20b] Running chat completion on conversation with 2 messages.
+2025-12-14 17:44:48 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:48 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-12-14 17:44:48 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 20, top_p = 0.800, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+2025-12-14 17:44:48 [DEBUG]
+ Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 2048, n_batch = 512, n_predict = 800, n_keep = 316
+Cache reuse summary: 252/316 of prompt (79.7468%), 252 prefix, 0 non-prefix
+Total prompt tokens: 316
+Prompt tokens to decode: 64
+BeginProcessingPrompt
+2025-12-14 17:44:48  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 0.0%
+2025-12-14 17:44:48 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-12-14 17:44:48  [INFO]
+ [openai/gpt-oss-20b] Prompt processing progress: 100.0%
+2025-12-14 17:44:49 [DEBUG]
+ Target model llama_perf stats:
+common_perf_print:    sampling time =     225.01 ms
+common_perf_print:    samplers time =       1.99 ms /   334 tokens
+common_perf_print:        load time =    4636.15 ms
+common_perf_print: prompt eval time =     158.96 ms /    64 tokens (    2.48 ms per token,   402.61 tokens per second)
+common_perf_print:        eval time =     471.47 ms /    17 runs   (   27.73 ms per token,    36.06 tokens per second)
+common_perf_print:       total time =     857.29 ms /    81 tokens
+common_perf_print: unaccounted time =       1.85 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+common_perf_print:    graphs reused =         16
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 5070)   | 12226 = 1569 + (8393 =  7340 +      68 +     985) +        2264 |
+llama_memory_breakdown_print: |   - Host               |                 4237 =  4196 +      28 +      13                |
+2025-12-14 17:44:49  [INFO]
+ [openai/gpt-oss-20b] Model generated tool calls:  []
+2025-12-14 17:44:49  [INFO]
+ [openai/gpt-oss-20b] Generated prediction:  {
+  "id": "chatcmpl-57iqj0uff9mzj0vil1e6l",
+  "object": "chat.completion",
+  "created": 1765727088,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[{\n  \"idx\": [\n    1\n]}]",
+        "reasoning": "",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 18,
+    "total_tokens": 334
+  },
+  "stats": {},
+  "system_fingerprint": "openai/gpt-oss-20b"
+}

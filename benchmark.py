@@ -31,6 +31,30 @@ Rules:
 5. If none, output [].
 """
 
+RESPONSE_FORMAT = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "constructions_idx",
+        "strict": True,
+        "schema": {
+            "type": "array",
+            "maxItems": K_MAX,
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["idx"],
+                "properties": {
+                    "idx": {
+                        "type": "array",
+                        "items": {"type": "integer"},
+                        "minItems": 1
+                    }
+                }
+            }
+        }
+    }
+}
+
 def normalize_concat_to_word(concat: str) -> str:
     return concat.replace("Ġ", " ").replace("Ċ", "\n").strip().lower()
 
@@ -47,25 +71,6 @@ def call_model(client: OpenAI, tiles: List[str]) -> Tuple[List[Dict[str, Any]], 
     user_payload = {"tiles": tiles}
     user_text = json.dumps(user_payload, ensure_ascii=False)
 
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "constructions",
-            "schema": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "word": {"type": "string"},
-                        "used_tokens": {"type": "array", "items": {"type": "string"}},
-                        "concat": {"type": "string"}
-                    },
-                    "required": ["word", "used_tokens", "concat"]
-                }
-            }
-        }
-    }
-
     t0 = time.perf_counter()
     resp = client.chat.completions.create(
         model=MODEL_NAME,
@@ -75,39 +80,14 @@ def call_model(client: OpenAI, tiles: List[str]) -> Tuple[List[Dict[str, Any]], 
         ],
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS,
-        response_format=response_format,  # Add this
+        response_format=RESPONSE_FORMAT,
     )
     dt = time.perf_counter() - t0
 
     raw = resp.choices[0].message.content or ""
-    if not raw:
-        # Sometimes LM Studio puts the output in reasoning field
-        raw = getattr(resp.choices[0].message, 'reasoning', '') or ""
-
-    # Parse JSON from raw output, handling possible prefixes or extra text
-    content = raw.strip()
-    
-    # Check for specific prefix
-    if "RAW MODEL JSON: " in content:
-        content = content.split("RAW MODEL JSON: ", 1)[1].strip()
-    
-    try:
-        parsed = json.loads(content)
-    except json.JSONDecodeError:
-        # Try to extract JSON array using regex
-        match = re.search(r'\[.*\]', content, re.DOTALL)
-        if match:
-            json_str = match.group()
-            try:
-                parsed = json.loads(json_str)
-            except json.JSONDecodeError:
-                raise ValueError(f"Model did not return valid JSON. Raw output:\n{raw}")
-        else:
-            raise ValueError(f"Model did not return valid JSON. Raw output:\n{raw}")
-
+    parsed = json.loads(raw)
     if not isinstance(parsed, list):
         raise ValueError(f"Expected JSON list, got {type(parsed)}. Raw:\n{raw}")
-
     return parsed, dt, raw
 
 
@@ -115,51 +95,37 @@ def evaluate_outputs(
     outputs: List[Dict[str, Any]],
     tiles: List[str],
     all_solutions: Set[str],
-    targets: Set[str]
+    targets: Set[str],
 ) -> Dict[str, Any]:
-    tiles_counter = Counter(tiles)
-
     fmt_err = 0
-    valid_outputs = []
-    for it in outputs:
-        if not isinstance(it, dict):
-            fmt_err += 1
-            continue
-        if not isinstance(it.get("word"), str) or not isinstance(it.get("concat"), str) or not isinstance(it.get("used_tokens"), list):
-            fmt_err += 1
-            continue
-        if any(not isinstance(t, str) for t in it["used_tokens"]):
-            fmt_err += 1
-            continue
-        valid_outputs.append(it)
-
-    valid_outputs = valid_outputs[:K_MAX]
-
     pred_words = set()
-    concat_mismatch = 0
-    word_norm_mismatch = 0
-    token_overuse_or_missing = 0
 
-    for it in valid_outputs:
-        used = it["used_tokens"]
+    index_oob = 0
+    index_reuse = 0
 
-        # Check multiset inclusion against tiles (critical for your research goal)
-        used_counter = Counter(used)
-        if any(used_counter[t] > tiles_counter.get(t, 0) for t in used_counter):
-            token_overuse_or_missing += 1
+    for it in outputs[:K_MAX]:
+        if not isinstance(it, dict) or "idx" not in it or not isinstance(it["idx"], list):
+            fmt_err += 1
+            continue
+        if any(not isinstance(x, int) for x in it["idx"]):
+            fmt_err += 1
             continue
 
-        concat_expected = "".join(used)
-        if it["concat"] != concat_expected:
-            concat_mismatch += 1
+        idx_list = it["idx"]
+
+        # bounds check
+        if any(x < 0 or x >= len(tiles) for x in idx_list):
+            index_oob += 1
             continue
 
-        w_expected = normalize_concat_to_word(concat_expected)
-        w = it["word"].strip().lower()
-        if w != w_expected:
-            word_norm_mismatch += 1
+        # multiplicity check (each position usable once)
+        if len(set(idx_list)) != len(idx_list):
+            index_reuse += 1
             continue
 
+        used_tokens = [tiles[i] for i in idx_list]
+        concat = "".join(used_tokens)
+        w = normalize_concat_to_word(concat)
         pred_words.add(w)
 
     valid_hits = pred_words.intersection(all_solutions)
@@ -176,7 +142,6 @@ def evaluate_outputs(
 
     return {
         "n_output_items_raw": len(outputs),
-        "n_output_items_parsed": len(valid_outputs),
         "n_pred_unique": n_pred,
         "n_valid_unique": n_valid,
         "n_solutions": len(all_solutions),
@@ -185,10 +150,10 @@ def evaluate_outputs(
         "full_recall": full_recall,
         "target_recall": target_recall,
         "format_errors": fmt_err,
-        "concat_field_mismatch": concat_mismatch,
-        "word_normalization_mismatch": word_norm_mismatch,
-        "token_overuse_or_missing": token_overuse_or_missing,
+        "index_oob": index_oob,
+        "index_reuse": index_reuse,
     }
+
 
 
 def main():
